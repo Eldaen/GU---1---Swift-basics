@@ -49,16 +49,16 @@ func quadraticEquationSolver (a: Double, b: Double, c: Double) { // Double чт�
 }
 
 print("Когда корень один")
-quadraticEquationSolver(a: 3.0, b: -18.0, c: 27.0)
+quadraticEquationSolver(a: 3, b: -18, c: 27)
 
 print("\nКогда корня два")
-quadraticEquationSolver(a: 1.0, b: -70.0, c: 600.0)
+quadraticEquationSolver(a: 1, b: -70, c: 600)
 
 print("\nКогда а = 0")
-quadraticEquationSolver(a: 0, b: -18.0, c: 27.0)
+quadraticEquationSolver(a: 0, b: -18, c: 27)
 
 print("\nКогда b = 0")
-quadraticEquationSolver(a: 3.0, b: 0, c: -27.0)
+quadraticEquationSolver(a: 3, b: 0, c: -27)
 
 print("\n\n\n")
 // --------------------------------------------
@@ -67,7 +67,7 @@ print("\n\n\n")
 /*
  Задание 2
  
- 
+ Нужно посчитать площадь, периметр и гипотенузу прямоугольного треугольника
  */
 
 func triangleDataCounter (a: Double, b: Double) {
@@ -90,10 +90,10 @@ func trianglePerimeterCounter (a: Double, b: Double) {
 
 
 print("\nСчитаем треугольник со сторонами 2 и 6")
-triangleDataCounter(a: 2, b: 6.0)
+triangleDataCounter(a: 2, b: 6)
 
 print("\nСчитаем треугольник со сторонами 0 и 6")
-triangleDataCounter(a: 0, b: 6.0)
+triangleDataCounter(a: 0, b: 6)
 
 
 
