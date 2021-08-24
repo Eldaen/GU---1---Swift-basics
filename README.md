@@ -1,3 +1,3 @@
-#Starting to sturdy at Geek University. The first course, Swift basics 
+# Swift basics 
 
 Starting to sturdy at Geek University. The first course.
