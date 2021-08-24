@@ -95,5 +95,25 @@ triangleDataCounter(a: 2, b: 6)
 print("\nСчитаем треугольник со сторонами 0 и 6")
 triangleDataCounter(a: 0, b: 6)
 
+print("\n\n\n")
+// --------------------------------------------
 
 
+/*
+ Задание 3
+ 
+ Нужно ввести сумму вклада, проценты и посчитать, сколько получится через 5 лет
+ */
+
+
+
+func depositIncomeCounter (summ: Double, yearlyPercent: Double, howManyYears: Int) -> Double {
+    var newSumm = summ
+    
+    for _ in 1...howManyYears {
+        newSumm = newSumm + ( newSumm * yearlyPercent ) / 100
+    }
+    return newSumm
+}
+
+print("Вкладываем 500 тысяч рублей на 5 лет под 7 процентов годовых. \nЧерез 5 лет получаем \(depositIncomeCounter(summ: 500_000, yearlyPercent: 7, howManyYears: 5)) рублей.")
