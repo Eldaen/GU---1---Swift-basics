@@ -73,34 +73,6 @@ enum carWindowsState: String {
     case closed = "The windows are open"
 }
 
-//// Решил сделать вот так: Структура, которая описывает окна в машине и у них есть состояние.
-//struct carWindows {
-//    var leftFront: carWindowsState = .closed
-//    var rightFront: carWindowsState = .closed
-//    var leftRear: carWindowsState = .closed
-//    var rightRear: carWindowsState = .closed
-//
-//    mutating func openAllWindows() {
-//        self.leftFront = .open
-//        self.leftRear = .open
-//        self.rightFront = .open
-//        self.rightRear = .open
-//    }
-//
-//    mutating func closeAllWindows() {
-//        self.leftFront = .closed
-//        self.leftRear = .closed
-//        self.rightFront = .closed
-//        self.rightRear = .closed
-//    }
-//
-//}
-
-//enum carWindowsState {
-//    case open
-//    case closed
-//}
-
 enum engineState: String {
     case off = "The engine is off"
     case on = "The engine is on"
@@ -112,4 +84,6 @@ enum carActions {
     case openWindows
     case closeWindows
 }
+
+
 
