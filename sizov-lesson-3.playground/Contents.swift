@@ -123,13 +123,9 @@ formatter.dateFormat = "dd/mm/yyyy HH:mm"
 var truckDate = formatter.date(from: "30/10/2020 10:00") ?? Date.init()
 var sportCarDate = formatter.date(from: "30/5/2021 10:00") ?? Date.init()
 
-<<<<<<< HEAD
+
 var truck = HeavyVehicle(brand: "CyberTruck", dateOfCreation: truckDate, maxWeight: 2000, sleepingSpot: false, gasTankVolume: 0, trunkVolume: 1500)
 var sportCar = LightVehicle(brand: "Porsche", dateOfCreation: sportCarDate, panoramicRoof: false, aeroSpoiler: true, passangersCount: 2, trunkVolume: 100)
-=======
-var truck = heavyVehicle(brand: "CyberTruck", dateOfCreation: truckDate, maxWeight: 2000, sleepingSpot: false, gasTankVolume: 0, trunkVolume: 1500)
-var sportCar = lightVehicle(brand: "Porsche", dateOfCreation: sportCarDate, panoramicRoof: false, aeroSpoiler: true, passangersCount: 2, trunkVolume: 100)
->>>>>>> lesson3
 
 sportCar.doSomething(whatToDo: .openWindows)
 sportCar.doSomething(whatToDo: .startEngine)
