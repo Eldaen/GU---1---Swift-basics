@@ -29,6 +29,12 @@ class Car {
         case .closeWindows :
             self.windowsState = .closed
             print("Windows are CLOSED")
+        case .raiseTheSpoiler:
+            break
+        case .lowerTheSpoiler:
+            break // А как лучше в такой ситуации сделать? Когда перечисление должно быть полным в базовом классе, но часть его относится к потомкам.
+        case .emptyTheBack:
+            break
         }
     }
     

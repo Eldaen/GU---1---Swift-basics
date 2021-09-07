@@ -17,10 +17,27 @@ enum engineState: String {
     case on = "The engine is on"
 }
 
+enum spoilerState: String {
+    case risen = "The spoiler is up"
+    case lowered = "The spoiler is down"
+}
+
 enum carActions {
     case startEngine
     case stopEngine
     case openWindows
     case closeWindows
+    case raiseTheSpoiler
+    case lowerTheSpoiler
+    case emptyTheBack
 }
+
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/mm/yyyy HH:mm"
+var truckDate = formatter.date(from: "30/10/2020 10:00") ?? Date.init()
+var sportCarDate = formatter.date(from: "30/5/2021 10:00") ?? Date.init()
+
+
+var truck = TrunkCar(brand: "CyberTruck", dateOfCreation: truckDate, trunkVolume: 1500, maxWeight: 2000, sleepingSpot: false, gasTankVolume: 0, trunkBackCopacity: 10000)
+var sportCar = SportCar(brand: "Porsche", dateOfCreation: sportCarDate, trunkVolume: 100, panoramicRoof: false, aeroSpoiler: true, passangersCount: 2)
 
