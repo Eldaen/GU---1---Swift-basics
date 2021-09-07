@@ -13,15 +13,7 @@ class TrunkCar: Car {
     var sleepingSpot: Bool
     var gasTankVolume: Int
     var trunkBackCopacity: Int
-    var copacityRemaining: Int {
-        get { return self.copacityRemaining }
-        set {
-            let newCopacityRemaining = trunkBackCopacity - newValue
-            if newCopacityRemaining > 0 { // надо убедиться, что не грузят через край
-                self.copacityRemaining = newCopacityRemaining
-            }
-        }
-    }
+    var copacityRemaining: Int
     var storedCargo: Int = 0
 
     
@@ -30,6 +22,7 @@ class TrunkCar: Car {
             
         if whatToDo == .emptyTheBack {
             self.storedCargo = 0
+            print("The trunk is empty now")
         }
         }
     
@@ -37,6 +30,7 @@ class TrunkCar: Car {
         let newCargoWeight = self.storedCargo + newCargo
         if newCargoWeight < self.trunkBackCopacity { // если сумму текущего груза + новый не превышает вместимость, то можно положить
             self.storedCargo += newCargo
+            self.copacityRemaining -= newCargo
             print("\(newCargo) of cargo weight were added to the trunk")
         } else {
             print("Can't carry so much weight")
@@ -50,6 +44,7 @@ class TrunkCar: Car {
         self.sleepingSpot = sleepingSpot
         self.gasTankVolume = gasTankVolume
         self.trunkBackCopacity = trunkBackCopacity
+        self.copacityRemaining = trunkBackCopacity
         
         super.init(brand: brand, dateOfCreation: dateOfCreation, trunkVolume: trunkVolume)
     }

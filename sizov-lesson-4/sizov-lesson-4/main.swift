@@ -41,3 +41,14 @@ var sportCarDate = formatter.date(from: "30/5/2021 10:00") ?? Date.init()
 var truck = TrunkCar(brand: "CyberTruck", dateOfCreation: truckDate, trunkVolume: 1500, maxWeight: 2000, sleepingSpot: false, gasTankVolume: 0, trunkBackCopacity: 10000)
 var sportCar = SportCar(brand: "Porsche", dateOfCreation: sportCarDate, trunkVolume: 100, panoramicRoof: false, aeroSpoiler: true, passangersCount: 2)
 
+sportCar.doSomething(whatToDo: .openWindows)
+sportCar.doSomething(whatToDo: .startEngine)
+sportCar.doSomething(whatToDo: .raiseTheSpoiler)
+
+truck.doSomething(whatToDo: .startEngine)
+truck.doSomething(whatToDo: .stopEngine)
+truck.doSomething(whatToDo: .emptyTheBack)
+truck.addCargo(howMuch: 1000)
+
+print(truck.storedCargo)
+print(truck.copacityRemaining)

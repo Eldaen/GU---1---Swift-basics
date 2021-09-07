@@ -20,8 +20,10 @@ class SportCar: Car {
         switch whatToDo {
             case .raiseTheSpoiler:
                 self.aeroSpoilerState = .risen
+                print(spoilerState.risen.rawValue)
             case .lowerTheSpoiler:
                 self.aeroSpoilerState = .lowered
+                print(spoilerState.lowered.rawValue)
         default:
             break
         }
