@@ -82,3 +82,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 *.xcplayground
+
+sizov-lesson-4/sizov-lesson-4.xcodeproj/project.pbxproj
