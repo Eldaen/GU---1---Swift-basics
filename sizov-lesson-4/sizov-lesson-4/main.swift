@@ -7,30 +7,6 @@
 
 import Foundation
 
-enum carWindowsState: String {
-    case open = "The windows are shut"
-    case closed = "The windows are open"
-}
-
-enum engineState: String {
-    case off = "The engine is off"
-    case on = "The engine is on"
-}
-
-enum spoilerState: String {
-    case risen = "The spoiler is up"
-    case lowered = "The spoiler is down"
-}
-
-enum carActions {
-    case startEngine
-    case stopEngine
-    case openWindows
-    case closeWindows
-    case raiseTheSpoiler
-    case lowerTheSpoiler
-    case emptyTheBack
-}
 
 let formatter = DateFormatter()
 formatter.dateFormat = "dd/mm/yyyy HH:mm"
@@ -41,9 +17,9 @@ var sportCarDate = formatter.date(from: "30/5/2021 10:00") ?? Date.init()
 var truck = TrunkCar(brand: "CyberTruck", dateOfCreation: truckDate, trunkVolume: 1500, maxWeight: 2000, sleepingSpot: false, gasTankVolume: 0, trunkBackCopacity: 10000)
 var sportCar = SportCar(brand: "Porsche", dateOfCreation: sportCarDate, trunkVolume: 100, panoramicRoof: false, aeroSpoiler: true, passangersCount: 2)
 
-sportCar.doSomething(whatToDo: .openWindows)
-sportCar.doSomething(whatToDo: .startEngine)
-sportCar.doSomething(whatToDo: .raiseTheSpoiler)
+sportCar.doSomething(whatToDo: Car.carActions.openWindows)
+sportCar.doSomething(whatToDo: Car.carActions.startEngine)
+sportCar.doSomething(whatToDo: Car.carActions.raiseTheSpoiler)
 
 truck.doSomething(whatToDo: .startEngine)
 truck.doSomething(whatToDo: .stopEngine)

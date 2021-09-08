@@ -9,19 +9,44 @@ import Foundation
 
 class Car {
     
+    enum carWindowsState: String {
+        case open = "The windows are shut"
+        case closed = "The windows are open"
+    }
+
+    enum engineState: String {
+        case off = "The engine is off"
+        case on = "The engine is on"
+    }
+
+    enum spoilerState: String {
+        case risen = "The spoiler is up"
+        case lowered = "The spoiler is down"
+    }
+
+    enum carActions {
+        case startEngine
+        case stopEngine
+        case openWindows
+        case closeWindows
+        case raiseTheSpoiler
+        case lowerTheSpoiler
+        case emptyTheBack
+    }
+    
     let brand: String
     let dateOfCreation: Date // Попробовать использовать Date, можно было и String
     var trunkVolume: Int
-    var engineState: engineState
+    var engine: engineState
     var windowsState: carWindowsState
     
     func doSomething (whatToDo: carActions) {
         switch whatToDo {
         case .startEngine :
-            self.engineState = .on
+            self.engine = .on
             print("Engine is ON")
         case .stopEngine :
-            self.engineState = .off
+            self.engine = .off
             print("Engine is OFF")
         case .openWindows :
             self.windowsState = .open
@@ -43,7 +68,7 @@ class Car {
         self.dateOfCreation = dateOfCreation
         self.trunkVolume = trunkVolume
         
-        engineState = .off
-        windowsState = .closed
+        self.engine = .off
+        self.windowsState = .closed
     }
 }
