@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Vehicle {
+class Vehicle: ConsolePrintable {
 
     enum carWindowsState: String {
         case open = "The windows are shut"
@@ -39,6 +39,10 @@ class Vehicle {
     var trunkVolume: Int
     var engine: engineState
     var windowsState: carWindowsState
+    
+    var description: String {
+        return "I am the \(brand) car, created at \(dateOfCreation). \(engine.rawValue)."
+    }
 
     func doSomething (whatToDo: carActions) {
         switch whatToDo {
