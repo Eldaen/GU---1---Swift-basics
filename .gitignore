@@ -80,3 +80,17 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+Sizov-lesson-1.playground/contents.xcplayground
+
+sizov-lesson-2.playground/contents.xcplayground
+
+sizov-lesson-4/sizov-lesson-4.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+sizov-lesson-4/sizov-lesson-4.xcodeproj/project.pbxproj
+
+*.pbxproj
+
+sizov-lesson-5/sizov-lesson-5/sizov-lesson-5.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+sizov-lesson-5/sizov-lesson-5/sizov-lesson-5.xcodeproj/project.xcworkspace/contents.xcworkspacedata
