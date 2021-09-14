@@ -41,6 +41,10 @@ struct Queue<T: Weightabe> {
         }
         return weight
     }
+    
+    subscript (_ index: Int) -> T? {
+        return elements.indices.contains(index) ? elements[index] : nil // indices создаёт список всех индексов и можно там поискать, есть ли такой. Если нет, то вернём nil
+    }
 }
 
 var queueCircle = Queue<Circle>()
@@ -67,8 +71,29 @@ print(queueRectangle.queueLengthReport())
 queueCircle.removeHalf()
 queueRectangle.removeHalf()
 
-print("\n\n")
+print("\n")
 
 //Смотрим, сколько сейчас элементов в очереди
 print(queueCircle.queueLengthReport())
 print(queueRectangle.queueLengthReport())
+
+print("\n")
+
+//Проверяем наш сабскрипт
+if let someFigure = queueCircle[1] {
+    print(someFigure.description)
+} else {
+    print("There is no such figure in queue")
+}
+
+if let someFigure = queueRectangle[0] {
+    print(someFigure.description)
+} else {
+    print("There is no such figure in queue")
+}
+
+if let someFigure = queueRectangle[5] {
+    print(someFigure.description)
+} else {
+    print("There is no such figure in queue")
+}

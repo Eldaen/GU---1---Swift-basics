@@ -7,9 +7,12 @@
 
 import Foundation
 
-class Circle: Weightabe {                // имплементируем протокол кругу
+class Circle: Weightabe, Figure {                // имплементируем протокол кругу
     var radius: Double
     var weight: Double
+    var description: String {
+        "I am a Circle and my radius is \(radius), my perimeter is \(self.calculatePerimiter())"
+    }
     func calculatePerimiter() -> Double {
         return 2.0 * Double.pi * radius
     }

@@ -7,10 +7,14 @@
 
 import Foundation
 
-class Rectangle: Weightabe {       // имплементируем протокол прямоугольнику
+class Rectangle: Weightabe, Figure {       // имплементируем протокол прямоугольнику
     var sideA: Double
     var sideB: Double
     var weight: Double
+    var description: String {
+        "I am a Rectangle and my sides are \(self.sideA) and \(self.sideB). My perimeter is \(self.calculatePerimiter())"
+    }
+    
     func calculatePerimiter() -> Double {
         return sideA + sideB
     }
