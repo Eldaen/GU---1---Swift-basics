@@ -14,7 +14,7 @@ class Rectangle: Figure  {
     
     override var description: String {
         get {
-            return "I am a Rectangle and my sides are \(self.sideA) and \(self.sideB). My perimeter is \(self.perimeter)"
+            return String(format: "I am a Rectangle and my sides are %.0f and %.0f. My perimeter is %.2f \n", self.sideA, self.sideB, self.perimeter)
         }
         set {
             self.description = newValue

@@ -13,7 +13,7 @@ class Circle: Figure {
     
     override var description: String {
         get {
-            return "I am a Circle and my radius is \(radius), my perimeter is \(self.perimeter)"
+            return String(format: "I am a Circle and my radius is %.f, my perimeter is %.2f\n", self.radius, self.perimeter)
         }
         set {
             self.description = newValue
