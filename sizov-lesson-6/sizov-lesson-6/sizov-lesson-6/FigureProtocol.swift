@@ -9,4 +9,5 @@ import Foundation
 
 protocol Figure {
     var description: String { get }
+    var perimeter: Double { get }
 }
