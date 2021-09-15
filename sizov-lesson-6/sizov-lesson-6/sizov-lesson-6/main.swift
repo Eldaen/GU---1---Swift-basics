@@ -7,61 +7,32 @@
 
 import Foundation
 
-// Очередь отличается от стека тем, что первый пришедший - первым уходит, так что надо только pop() изменить
-struct Queue<T: Weightabe> {
-    
-    private var queueLength: Int {
-        elements.count
-    }
-    private var elements: [T] = []           // массив типа Т
-    
-    func queueLengthReport () -> String {
-        return "The current queue is \(queueLength)"
-    }
-    
-    mutating func push(_ element: T) {      // добавляем элемент типа Т
-        elements.append(element)
-    }
-    
-    mutating func pop() -> T? {            // извлекаем элемент типа Т
-        return elements.removeFirst()       // Не стэк, так что удаляем первый, не последний
-    }
-    
-    mutating func removeHalf() {            // Выкидываем пол очереди, нечего толпиться
-        let count = elements.count / 2
-        
-        while elements.count > count {
-            elements.removeLast()
-        }
-    }
-    var totalWeght : Double {             // свойство, отражающее общий вес деталей
-        var weight = 0.0
-        for element in elements {
-            weight += element.weight    // мы можем использовать свойство weight
-        }
-        return weight
-    }
-    
-    subscript (_ index: Int) -> T? {
-        return elements.indices.contains(index) ? elements[index] : nil // indices создаёт список всех индексов и можно там поискать, есть ли такой. Если нет, то вернём nil
-    }
-}
 
 var queueCircle = Queue<Circle>()
 var queueRectangle = Queue<Rectangle>()
 
-queueRectangle.push(Rectangle(sideA: 10, sideB: 20, weight: 5))
-queueRectangle.push(Rectangle(sideA: 2, sideB: 2, weight: 5))
-queueRectangle.push(Rectangle(sideA: 10, sideB: 20, weight: 5))
-queueRectangle.push(Rectangle(sideA: 2, sideB: 2, weight: 5))
-queueRectangle.push(Rectangle(sideA: 10, sideB: 20, weight: 5))
-queueRectangle.push(Rectangle(sideA: 2, sideB: 2, weight: 5))
+queueRectangle.push(Rectangle(sideA: 15, sideB: 12, weight: 5))
+queueRectangle.push(Rectangle(sideA: 2, sideB: 1, weight: 5))
+queueRectangle.push(Rectangle(sideA: 11, sideB: 21, weight: 5))
+queueRectangle.push(Rectangle(sideA: 14, sideB: 3, weight: 5))
+queueRectangle.push(Rectangle(sideA: 12, sideB: 22, weight: 5))
+queueRectangle.push(Rectangle(sideA: 6, sideB: 4, weight: 5))
 
 
-queueCircle.push(Circle(radius: 5, weight: 3))
-queueCircle.push(Circle(radius: 5, weight: 3))
-queueCircle.push(Circle(radius: 5, weight: 3))
-queueCircle.push(Circle(radius: 5, weight: 3))
+queueCircle.push(Circle(radius: 11, weight: 3))
+queueCircle.push(Circle(radius: 6, weight: 3))
+queueCircle.push(Circle(radius: 8, weight: 3))
+queueCircle.push(Circle(radius: 7, weight: 3))
+
+print("\n")
+
+var sortedCircle = queueCircle.SortByPerimeter(function: { $0 < $1 } )
+var sortedRectangle = queueRectangle.SortByPerimeter(function: { $0 > $1 })
+
+print(sortedCircle, "\n\n")
+print(sortedRectangle, "\n\n")
+
+print("\n")
 
 //Смотрим, сколько сейчас элементов в очереди
 print(queueCircle.queueLengthReport())
@@ -70,12 +41,6 @@ print(queueRectangle.queueLengthReport())
 //Половиним очереди
 queueCircle.removeHalf()
 queueRectangle.removeHalf()
-
-print("\n")
-
-//Смотрим, сколько сейчас элементов в очереди
-print(queueCircle.queueLengthReport())
-print(queueRectangle.queueLengthReport())
 
 print("\n")
 

@@ -7,30 +7,27 @@
 
 import Foundation
 
-class Rectangle: Weightabe, Figure, Comparable {
+class Rectangle: Figure  {
 
     var sideA: Double
     var sideB: Double
-    var weight: Double
-    var description: String {
-        "I am a Rectangle and my sides are \(self.sideA) and \(self.sideB). My perimeter is \(self.perimeter)"
-    }
-    var perimeter: Double {
-        return self.sideA + self.sideB
+    
+    override var description: String {
+        get {
+            return "I am a Rectangle and my sides are \(self.sideA) and \(self.sideB). My perimeter is \(self.perimeter)"
+        }
+        set {
+            self.description = newValue
+        }
+
     }
     
-    // Имплиментируем comparable
-    static func == (lhs: Rectangle, rhs: Rectangle) -> Bool {
-        return lhs.perimeter == rhs.perimeter
-    }
-    
-    static func < (lhs: Rectangle, rhs: Rectangle) -> Bool {
-        return lhs.perimeter < rhs.perimeter
-    }
+
     
     init(sideA: Double, sideB: Double, weight: Double) {
         self.sideA = sideA
         self.sideB = sideB
-        self.weight = weight
+        
+        super.init(perimeter: self.sideA + self.sideB, weight: weight)
     }
 }

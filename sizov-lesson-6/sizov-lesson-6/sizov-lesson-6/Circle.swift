@@ -7,27 +7,24 @@
 
 import Foundation
 
-class Circle: Weightabe, Figure, Comparable {                // имплементируем протокол кругу
+class Circle: Figure {
+    
     var radius: Double
-    var weight: Double
-    var description: String {
-        "I am a Circle and my radius is \(radius), my perimeter is \(self.perimeter)"
-    }
-    var perimeter: Double {
-        return 2.0 * Double.pi * radius
+    
+    override var description: String {
+        get {
+            return "I am a Circle and my radius is \(radius), my perimeter is \(self.perimeter)"
+        }
+        set {
+            self.description = newValue
+        }
+        
     }
     
-    // Имплиментируем comparable
-    static func == (lhs: Circle, rhs: Circle) -> Bool {
-        return lhs.perimeter == rhs.perimeter
-    }
-    
-    static func < (lhs: Circle, rhs: Circle) -> Bool {
-        return lhs.perimeter < rhs.perimeter
-    }
 
     init(radius: Double, weight: Double) {
         self.radius = radius
-        self.weight = weight
+        
+        super.init(perimeter: 2.0 * Double.pi * radius, weight: weight)
     }
 }

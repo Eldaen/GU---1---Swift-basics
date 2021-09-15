@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Weightabe {                      // создаем протокол поддержки веса
-    var weight: Double { get set }
+   
 }
