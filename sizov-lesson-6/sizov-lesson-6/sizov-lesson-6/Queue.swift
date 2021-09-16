@@ -19,11 +19,11 @@ struct Queue<T: Figure> {
         return "The current queue is \(queueLength)"
     }
     
-    mutating func push(_ element: T) {      // добавляем элемент типа Т
+    mutating func enqueue(_ element: T) {      // добавляем элемент типа Т
         elements.append(element)
     }
     
-    mutating func pop() -> T? {            // извлекаем элемент типа Т
+    mutating func dequeue() -> T? {            // извлекаем элемент типа Т
         return elements.removeFirst()       // Не стэк, так что удаляем первый, не последний
     }
     

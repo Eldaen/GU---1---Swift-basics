@@ -11,18 +11,18 @@ import Foundation
 var queueCircle = Queue<Circle>()
 var queueRectangle = Queue<Rectangle>()
 
-queueRectangle.push(Rectangle(sideA: 15, sideB: 12, weight: 5))
-queueRectangle.push(Rectangle(sideA: 2, sideB: 1, weight: 5))
-queueRectangle.push(Rectangle(sideA: 11, sideB: 21, weight: 5))
-queueRectangle.push(Rectangle(sideA: 14, sideB: 3, weight: 5))
-queueRectangle.push(Rectangle(sideA: 12, sideB: 22, weight: 5))
-queueRectangle.push(Rectangle(sideA: 6, sideB: 4, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 15, sideB: 12, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 2, sideB: 1, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 11, sideB: 21, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 14, sideB: 3, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 12, sideB: 22, weight: 5))
+queueRectangle.enqueue(Rectangle(sideA: 6, sideB: 4, weight: 5))
 
 
-queueCircle.push(Circle(radius: 11, weight: 3))
-queueCircle.push(Circle(radius: 6, weight: 3))
-queueCircle.push(Circle(radius: 8, weight: 3))
-queueCircle.push(Circle(radius: 7, weight: 3))
+queueCircle.enqueue(Circle(radius: 11, weight: 3))
+queueCircle.enqueue(Circle(radius: 6, weight: 3))
+queueCircle.enqueue(Circle(radius: 8, weight: 3))
+queueCircle.enqueue(Circle(radius: 7, weight: 3))
 
 print("\n")
 
